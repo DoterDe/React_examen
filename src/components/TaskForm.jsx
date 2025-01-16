@@ -24,16 +24,16 @@ function TaskForm({ addTask, updateTask, taskToEdit }) {
         priority: taskToEdit.priority,
       });
     }
-  }, [taskToEdit]); // Перезаполняем форму, если передана задача для редактирования
+  }, [taskToEdit]); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (task.title.trim() === "") return;
 
     if (taskToEdit) {
-      updateTask(task); // Если задача для редактирования, обновляем
+      updateTask(task);
     } else {
-      addTask({ ...task, id: Date.now() }); // Иначе добавляем новую задачу
+      addTask({ ...task, id: Date.now() });
     }
 
     setTask({
